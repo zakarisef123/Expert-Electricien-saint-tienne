@@ -251,11 +251,11 @@
             white-space: nowrap;
         }
         .marquee-track-wrap {
-            width: 100%; overflow: hidden;
+            width: 100%; min-width: 0; overflow: hidden;
             -webkit-mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
             mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
         }
-        .marquee-track { display: flex; gap: 40px; width: fit-content; animation: scrollX 42s linear infinite; align-items: center; }
+        .marquee-track { display: flex; gap: 40px; width: max-content; animation: scrollX 30s linear infinite; align-items: center; will-change: transform; }
         .marquee-track:hover { animation-play-state: paused; }
         @keyframes scrollX { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
@@ -287,7 +287,7 @@
         .bento-photo-badge strong { display: block; font-size: 0.95rem; }
         .bento-photo-badge span { display: block; font-size: 0.78rem; color: rgba(255,255,255,0.6); }
 
-        .bento-stats-col { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+        .bento-stats-col { display: grid; grid-template-columns: 1fr; grid-template-rows: repeat(3, 1fr); gap: 18px; }
         .stat-tile {
             background: var(--bg-alt); border-radius: 16px; padding: 24px 20px;
             position: relative; overflow: hidden;
@@ -614,7 +614,7 @@
             .hero-chip-row { gap: 18px; }
             .trust-ribbon-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
             .trust-ribbon-live { border-right: none; padding-right: 0; }
-            .bento-stats-col { grid-template-columns: 1fr 1fr; }
+            .bento-stats-col { grid-template-columns: 1fr; grid-template-rows: none; }
             .contact-cta-card { flex-direction: column; align-items: stretch; text-align: center; }
             .contact-cta-buttons { justify-content: center; }
             .assurance-band-grid { grid-template-columns: 1fr; }
@@ -749,18 +749,13 @@
 
             <div class="hero-chip-row">
                 <div class="hero-chip">
-                    <span class="chip-num" data-count="15">0</span>
+                    <span class="chip-num" data-count="8">0</span>
                     <span class="chip-label">Ans d'expérience</span>
                 </div>
                 <div class="hero-chip-sep"></div>
                 <div class="hero-chip">
                     <span class="chip-num" data-count="8500">0</span>
                     <span class="chip-label">Interventions réalisées</span>
-                </div>
-                <div class="hero-chip-sep"></div>
-                <div class="hero-chip">
-                    <span class="chip-num" data-count="98">0</span>
-                    <span class="chip-label">% Clients satisfaits</span>
                 </div>
                 <div class="hero-chip-sep"></div>
                 <div class="hero-chip">
@@ -824,18 +819,13 @@
                 <div class="bento-stats-col">
                     <div class="stat-tile">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                        <span class="stat-number" data-count="15">0</span>
+                        <span class="stat-number" data-count="8">0</span>
                         <div class="stat-label">Ans d'expérience</div>
                     </div>
                     <div class="stat-tile">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
                         <span class="stat-number" data-count="8500">0</span>
                         <div class="stat-label">Interventions réalisées</div>
-                    </div>
-                    <div class="stat-tile">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-                        <span class="stat-number" data-count="98">0</span>
-                        <div class="stat-label">% Clients satisfaits</div>
                     </div>
                     <div class="stat-tile">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
