@@ -3,23 +3,6 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-5258MZ27');</script>
-    <!-- End Google Tag Manager -->
-
-    <!-- Google tag (gtag.js) - Google Ads -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18411950203"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'AW-18411950203');
-    </script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -78,16 +61,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18411803888"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'AW-18411803888');
-    </script>
 
     <style>
         :root {
@@ -659,10 +632,6 @@
     </style>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5258MZ27"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 
     <!-- TOPBAR -->
     <div class="topbar">
@@ -1580,15 +1549,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 });
             });
 
-            // Conversion tracking on phone call links
-            document.querySelectorAll('a[href^="tel:"]').forEach(link => {
-                link.addEventListener('click', () => {
-                    if (typeof gtag === 'function') {
-                        gtag('event', 'conversion', {'send_to': 'AW-18411803888/12BoCP62hukcEPCpt8tE'});
-                    }
-                });
-            });
-
             // Counter animation (hero chips + bento stat tiles)
             const counters = document.querySelectorAll('.stat-number, .chip-num');
             let counted = false;
@@ -1683,9 +1643,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     icon.innerHTML = '<polyline points="20 6 9 17 4 12"/>';
                     title.textContent = 'Demande envoyée !';
                     text.textContent = "Merci, votre demande a bien été transmise à notre équipe. Nous revenons vers vous très rapidement.";
-                    if (typeof gtag === 'function') {
-                        gtag('event', 'conversion', {'send_to': 'AW-18411803888/12BoCP62hukcEPCpt8tE'});
-                    }
                 } else {
                     modalFeedback.classList.add('show', 'error');
                     modalAltCall.style.display = '';
@@ -1712,14 +1669,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             return response.json();
                         })
                         .then(() => {
-                            showModalFeedback(true);
-                            if (typeof gtag === 'function') {
-                                gtag('event', 'conversion', {
-                                    'send_to': 'AW-18411950203/9VMNCLrCp_ccEPugwMtE',
-                                    'value': 1.0,
-                                    'currency': 'EUR'
-                                });
-                            }
+                            window.location.href = 'confirmation.html';
                         })
                         .catch(() => {
                             showModalFeedback(false);
