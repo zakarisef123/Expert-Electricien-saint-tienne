@@ -11,6 +11,15 @@
     })(window,document,'script','dataLayer','GTM-P8H6F237');</script>
     <!-- End Google Tag Manager -->
 
+    <!-- Google tag (gtag.js) - Google Ads -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18411803888"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-18411803888');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -1561,6 +1570,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 });
             });
 
+            // Conversion tracking on phone call links
+            document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (typeof gtag === 'function') {
+                        /* Event snippet for Contact conversion page */
+                        gtag('event', 'conversion', {
+                            'send_to': 'AW-18411803888/sfa2CM_eq_ccEPCpt8tE',
+                            'value': 1.0,
+                            'currency': 'EUR'
+                        });
+                    }
+                });
+            });
+
             // Counter animation (hero chips + bento stat tiles)
             const counters = document.querySelectorAll('.stat-number, .chip-num');
             let counted = false;
@@ -1681,7 +1704,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             return response.json();
                         })
                         .then(() => {
-                            window.location.href = 'confirmation.html';
+                            showModalFeedback(true);
                         })
                         .catch(() => {
                             showModalFeedback(false);
